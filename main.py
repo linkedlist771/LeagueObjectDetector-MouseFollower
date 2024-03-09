@@ -25,6 +25,9 @@ parser = argparse.ArgumentParser(description="Run the program")
 parser.add_argument(
     "--invoke_key", type=str, default="ctrl+x", help="The key to invoke the program"
 )
+parser.add_argument(
+    "--in_blue_team", type=bool, default=False, help="Whether the player is in blue team"
+)
 
 
 if __name__ == "__main__":
@@ -83,6 +86,9 @@ if __name__ == "__main__":
                 if hero_positions:
                     hero_pos0 = hero_positions[0]
                     x, y = hero_pos0.get_center()
+                    if args.in_blue_team:
+                        x += 30
+                        y += 30
 
                     input_manager.move_mouse(x, y)
 
