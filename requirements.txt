@@ -1,0 +1,6 @@
+dxcam
+opencv-python
+pydantic
+ultralytics
+loguru
+black
